@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React,{useEffect, useState} from 'react';
+import axios from 'axios';
+import RepoDetails from './RepoDetails';
+import UserInfo from './UserInfo';
 function App() {
+  const [githubProfile, setGithubProfile] = useState([]);
+  const [showRepoDetails, setRepoDetails] = useState(false);
+  useEffect(()=>{
+    getGithubProfile();
+  } ,[]);
+  const getGithubProfile = ()=>{
+    axios.get('https://api.github.com/users/kajal1122').then(
+      response=>setGithubProfile(response.data)
+    )
+  }
+  const getRepoDetails = ()=>{
+     setRepoDetails(true);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+       {showRepoDetails === false ? <UserInfo userDetail={githubProfile} showrepoDetails={getRepoDetails}/> : <RepoDetails />}
     </div>
   );
 }
