@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/kajal1122/github_repo_detail/static/css/main.44f8b8b5.css",
+    "main.js": "/kajal1122/github_repo_detail/static/js/main.4a165174.js",
+    "index.html": "/kajal1122/github_repo_detail/index.html",
+    "main.44f8b8b5.css.map": "/kajal1122/github_repo_detail/static/css/main.44f8b8b5.css.map",
+    "main.4a165174.js.map": "/kajal1122/github_repo_detail/static/js/main.4a165174.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.44f8b8b5.css",
+    "static/js/main.4a165174.js"
+  ]
+}
